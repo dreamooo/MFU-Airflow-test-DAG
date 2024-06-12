@@ -6,7 +6,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 import json
 
-#aasdfghjkl;
+
 
 def extract_data():
     url1 = "https://my.api.mockaroo.com/mockupdata1_forp.json?key=299b8490"
