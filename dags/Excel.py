@@ -1,3 +1,4 @@
+from config import DB_USERNAME, DB_PASSWORD, DB_SERVERNAME
 import logging
 logging.basicConfig(level=logging.DEBUG)
 import os
@@ -33,7 +34,7 @@ def transform_data(ti):
 
 def load_data(df_str):
     df = pd.read_json(df_str)
-    connection_string = 'mssql+pyodbc://sa:Data-WH!072023@192.168.10.137/dreamEX?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes'
+    connection_string = f'mssql+pyodbc://{DB_USERNAME}:{DB_PASSWORD}@{DB_SERVERNAME}/dreamEX?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes'
     engine = create_engine(connection_string)
     with engine.begin() as connection:
         df.to_sql('dreamEX', con=connection, if_exists='append', index=False)
