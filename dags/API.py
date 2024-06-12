@@ -1,3 +1,4 @@
+from config import DB_USERNAME, DB_PASSWORD, DB_SERVERNAME
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
@@ -34,7 +35,7 @@ def transform_data(ti):
 
 def load_data(df_str):
     df = pd.read_json(df_str)
-    connection_string = 'mssql+pyodbc://sa:Data-WH!072023@192.168.10.137/dreams?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes'
+    connection_string = f'mssql+pyodbc://{DB_USERNAME}:{DB_PASSWORD}@{DB_SERVERNAME}/dreamEX?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes'
     engine = create_engine(connection_string)
     with engine.begin() as connection:
         df.to_sql('dream', con=connection, if_exists='append', index=False)
