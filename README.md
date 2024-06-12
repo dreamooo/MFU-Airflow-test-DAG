@@ -22,7 +22,7 @@ and replace with real  USERNAME ,PASSWORD, SERVERNAME (normally found in  line 3
 provide docker-compose.yaml already that mean skip      init
 
 # to start docker and airflow web  (normally found docker port 8080)
-# 1st  time may take some time 
+ 1st  time may take some time 
 
 docker compose up   
 
