@@ -23,11 +23,11 @@ provide docker-compose.yaml already that mean skip      init
 
 # to start docker and airflow web  (normally found docker port 8080)
  1st  time may take some time 
-
+##
 docker compose up   
 
  # to pause and docker compose up again do not use down  down=delete
-
+##
 docker compose stop
 
 
