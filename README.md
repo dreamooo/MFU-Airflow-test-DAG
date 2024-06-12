@@ -1,3 +1,6 @@
+Note 
+python 3.10
+ODBC driver 18  
 
 #  Airflow
 
