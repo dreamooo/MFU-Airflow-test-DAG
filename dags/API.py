@@ -1,4 +1,4 @@
-from config import DB_USERNAME, DB_PASSWORD, DB_SERVERNAME
+from config import DB_USERNAME, DB_PASSWORD, DB_SERVERNAME #here
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
@@ -35,6 +35,7 @@ def transform_data(ti):
 
 def load_data(df_str):
     df = pd.read_json(df_str)
+    #here
     connection_string = f'mssql+pyodbc://{DB_USERNAME}:{DB_PASSWORD}@{DB_SERVERNAME}/TestPiplineAPI?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes'
     engine = create_engine(connection_string)
     with engine.begin() as connection:
