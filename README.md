@@ -10,6 +10,7 @@ Excel may error because  openpyxl.
 1. Open https://console.developers.google.com/ in a web browser
 2. Login to your Google Account
 3. From the left hand menu select Credentials
+
  ![alt text](image.png)
 
 #  HOW Airflow
