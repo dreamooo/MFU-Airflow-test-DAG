@@ -1,9 +1,16 @@
 # Note 
 python 3.10
 ODBC driver 18  
-Google cloud  platform (GCP)
+
 API may error  because  limited request per day.
 Excel may error because  openpyxl.
+
+# How to create a Google API Key for Google Sheets
+
+1. Open https://console.developers.google.com/ in a web browser
+2. Login to your Google Account
+3. From the left hand menu select Credentials
+ ![alt text](image.png)
 
 #  HOW Airflow
 
