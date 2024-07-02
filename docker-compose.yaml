@@ -72,13 +72,13 @@ x-airflow-common:
     # The following line can be used to set a custom config file, stored in the local config folder
     # If you want to use it, outcomment it and replace airflow.cfg with the name of your config file
     # AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
-    GOOGLE_APPLICATION_CREDENTIALS: '/opt/airflow/se.json' 
+    GOOGLE_APPLICATION_CREDENTIALS: '/opt/airflow/keygg.json' 
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
-    - /run/desktop/mnt/host/d/MFU-Airflow-test-DAG-1/se.json:/opt/airflow/se.json:ro
+    - /run/desktop/mnt/host/d/MFU-Airflow-test-DAG-1/keygg.json:/opt/airflow/keygg.json:ro
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on

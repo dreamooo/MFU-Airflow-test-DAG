@@ -1,7 +1,7 @@
-Note 
+# Note 
 python 3.10
 ODBC driver 18  
-
+Google cloud  platform (GCP)
 API may error  because  limited request per day.
 Excel may error because  openpyxl.
 
