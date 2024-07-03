@@ -66,7 +66,7 @@ def extract_data_from_google_sheets():
     except Exception as e:
         logging.error(f'Failed to extract data from Google Sheets. Error: {str(e)}')
         return None
-    ######
+    
     
 def load_data(json_data):
     if json_data is None:
@@ -79,7 +79,7 @@ def load_data(json_data):
         # Print column names for debugging
         logging.info(f"Columns in DataFrame: {df.columns.tolist()}")
         
-        connection_string = f'mssql+pyodbc://{DB_USERNAME}:{DB_PASSWORD}@{DB_SERVERNAME}/TestPiplineAPI?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes'
+        connection_string = f'mssql+pyodbc://{DB_USERNAME}:{DB_PASSWORD}@{DB_SERVERNAME}/ggsh?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes'
         engine = create_engine(connection_string)
         
         with engine.begin() as connection:
@@ -107,7 +107,7 @@ def load_data(json_data):
     except Exception as e:
         logging.error(f'Failed to load data into MSSQL. Error: {str(e)}')
         raise  # Re-raise the exception to mark the task as failed
-
+    
 with DAG(
     "GoogleSheet_to_MSSQL",
     start_date=datetime(2024, 6, 5),
