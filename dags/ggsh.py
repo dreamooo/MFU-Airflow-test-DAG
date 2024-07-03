@@ -83,6 +83,11 @@ def load_data(json_data):
         engine = create_engine(connection_string)
         
         with engine.begin() as connection:
+            inspector = inspect(engine)
+            if not inspector.has_table('dreamAPI'):
+                logging.info("Table 'dreamAPI' does not exist. Creating it.")
+                df.head(0).to_sql('dreamAPI', con=connection, if_exists='replace', index=False)
+            
             # Get the existing column names from the SQL table
             existing_columns = pd.read_sql_query("SELECT TOP 0 * FROM dreamAPI", connection).columns.tolist()
             
