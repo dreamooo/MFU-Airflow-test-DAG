@@ -10,7 +10,7 @@ import logging
 import os
 import json
 import numpy as np
-
+from sqlalchemy import inspect
 
 # Use the environment variable
 KEY_PATH = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
