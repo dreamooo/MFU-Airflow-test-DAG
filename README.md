@@ -11,7 +11,7 @@ Excel may error because  openpyxl.
 2. Login to your Google Account
 3. From the left hand menu select Credentials
 
- ![alt text](image.png)
+
 
 #  HOW Airflow
 
