@@ -66,7 +66,7 @@ def extract_data_from_google_sheets():
     except Exception as e:
         logging.error(f'Failed to extract data from Google Sheets. Error: {str(e)}')
         return None
-    
+    ######
     
 def load_data(json_data):
     if json_data is None:
